@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiUser, FiMail, FiUsers, FiArrowRight, FiLoader } from "react-icons/fi";
+import {
+  FiUser,
+  FiMail,
+  FiUsers,
+  FiArrowRight,
+  FiLoader,
+} from "react-icons/fi";
 import toast from "react-hot-toast";
 import TextField from "../../../components/ui/TextField";
 import logo from "../../../assets/images/logo.png";
@@ -36,7 +42,7 @@ const FIELDS = [
 
 export default function Register() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ fullName: "Prathamesh Kamble", email: "truepratham2801@gmail.com", teamName: "Cypher Works" });
+  const [form, setForm] = useState({ fullName: "", email: "", teamName: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -50,7 +56,9 @@ export default function Register() {
     // TODO: replace with the real registration API call once the backend is ready
     setTimeout(() => {
       saveUser(form);
-      toast.success(`Welcome aboard, ${form.fullName.split(" ")[0] || "there"}!`);
+      toast.success(
+        `Welcome aboard, ${form.fullName.split(" ")[0] || "there"}!`,
+      );
       navigate("/home");
     }, 900);
   };
