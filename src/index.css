@@ -1,0 +1,85 @@
+/* Inter (body/UI) + the event-branding display fonts: Cormorant Garamond, Cinzel, Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@500;600&family=Montserrat:wght@400;600;700&display=swap");
+
+@import "tailwindcss";
+
+/*
+  ──────────────────────────────────────────────────────────────
+  CENTRAL DESIGN TOKENS
+  Palette derived from src/assets/backgrounds/mainBg.png — a
+  Rajasthani palace ink-wash illustration: warm ivory/parchment
+  paper with deep maroon-red washes and white architectural line
+  work. Neutrals are warmed (no cool grays) and text is espresso-
+  brown rather than pure black so it sits naturally on the paper
+  tone; primary is pulled straight from the artwork's red wash and
+  accent is a bronze/gold echoing the palace trim.
+
+  Tailwind v4 exposes everything in @theme as BOTH:
+    • CSS variables on :root  → var(--color-primary)
+    • utility classes         → bg-primary, text-muted, font-sans ...
+  This block is the single source of truth for the whole project.
+  ──────────────────────────────────────────────────────────────
+*/
+@theme {
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Event-branding display fonts (used for the convention title/dates/tagline) */
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-montserrat: "Montserrat", ui-sans-serif, sans-serif;
+
+  /* ── Surfaces / Neutrals (warm parchment, matches paper tone) ── */
+  --color-background: #f8efe1; /* app canvas (parchment)    */
+  --color-surface: #fffbf4; /* cards, panels, sheets      */
+  --color-surface-muted: #f1e4d2; /* subtle fills, hovers       */
+  --color-surface-translucent: rgba(255, 251, 244, 0.9); /* overlay on bg art */
+  --color-border: #e6d6bf; /* hairlines, dividers        */
+  --color-border-strong: #cbab83; /* inputs, stronger lines     */
+
+  /* ── Text (warm espresso, not cool black) ────────────────── */
+  --color-heading: #2c160f; /* headings / high emphasis  */
+  --color-text: #3d2a1f; /* body copy                 */
+  --color-muted: #7a6151; /* secondary text            */
+  --color-subtle: #a18d7c; /* placeholders, captions    */
+
+  /* ── Primary (maroon-red lifted from the artwork's ink wash) ── */
+  --color-primary: #9c2b2b; /* main brand action         */
+  --color-primary-hover: #7c1f1f; /* hover / pressed           */
+  --color-primary-soft: #f6dfdb; /* tinted backgrounds        */
+  --color-on-primary: #fffaf3; /* text/icons on primary     */
+
+  /* ── Accent (bronze/gold — palace trim, balances the red) ── */
+  --color-accent: #8a5a22;
+  --color-accent-soft: #f3e6cf;
+
+  /* ── Semantic (warmed to sit with the palette) ───────────── */
+  --color-success: #2f7d4f;
+  --color-success-soft: #e7f3ea;
+  --color-warning: #b8791f;
+  --color-warning-soft: #fbeed9;
+  --color-error: #c23030;
+  --color-error-soft: #f8e2e0;
+  --color-info: #3a6ea8;
+  --color-info-soft: #e6eef7;
+}
+
+/* Base defaults so the tokens take effect app-wide */
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  background-image: url("./assets/backgrounds/mainBg.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
