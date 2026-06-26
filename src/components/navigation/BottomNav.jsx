@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FiMoreHorizontal } from "react-icons/fi";
+import { FiCompass } from "react-icons/fi";
 import { primaryNavItems } from "./navConfig";
 
 export default function BottomNav({ onMoreClick, moreActive }) {
@@ -28,8 +28,8 @@ export default function BottomNav({ onMoreClick, moreActive }) {
             moreActive ? "text-primary" : "text-muted hover:text-heading"
           }`}
         >
-          <FiMoreHorizontal className="h-5 w-5" />
-          <span>More</span>
+          <FiCompass className="h-5 w-5" />
+          <span>Explore</span>
         </button>
       </div>
     </nav>

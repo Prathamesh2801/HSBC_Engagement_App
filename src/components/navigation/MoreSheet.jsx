@@ -24,7 +24,7 @@ export default function MoreSheet({ open, onClose }) {
             className="fixed inset-x-0 bottom-0 z-50 rounded-t-2xl border border-border bg-surface-translucent p-5 pb-8 backdrop-blur-md"
           >
             <div className="mx-auto mb-4 h-1.5 w-10 rounded-full bg-border-strong" />
-            <h2 className="mb-4 text-sm font-semibold text-heading">More options</h2>
+            <h2 className="mb-4 text-sm font-semibold text-heading">Explore</h2>
 
             <div className="space-y-1.5">
               {moreNavItems.map(({ to, label, icon: Icon }) => (

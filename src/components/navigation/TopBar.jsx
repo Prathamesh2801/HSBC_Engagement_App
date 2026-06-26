@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FiBell, FiUser } from "react-icons/fi";
+import { FiBell, FiUser, FiHelpCircle } from "react-icons/fi";
 import logo from "../../assets/images/logo.png";
 
 export default function TopBar({ onProfileClick, hasUnreadNotifications = true }) {
@@ -12,6 +12,18 @@ export default function TopBar({ onProfileClick, hasUnreadNotifications = true }
       />
 
       <div className="flex items-center gap-2">
+        <NavLink
+          to="/help"
+          aria-label="Help desk"
+          className={({ isActive }) =>
+            `grid h-9 w-9 place-items-center rounded-full transition-colors ${
+              isActive ? "bg-info/15 text-info" : "bg-info-soft text-info hover:bg-info/15"
+            }`
+          }
+        >
+          <FiHelpCircle className="h-5 w-5" />
+        </NavLink>
+
         <NavLink
           to="/notifications"
           className={({ isActive }) =>

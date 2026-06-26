@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { FiLock, FiArrowRight } from "react-icons/fi";
 
+const MotionLink = motion(Link);
+
 export default function GameCard({ game, index = 0 }) {
-  const { name, image, href, comingSoon } = game;
+  const { name, image, href, to, comingSoon } = game;
 
   const motionProps = {
     initial: { opacity: 0, y: 16 },
@@ -19,7 +22,7 @@ export default function GameCard({ game, index = 0 }) {
         <img
           src={image}
           alt={name}
-          className="h-14 w-14 object-contain mix-blend-multiply"
+          className="h-20 w-20 object-contain mix-blend-multiply"
         />
       </div>
       <span className="mt-3 text-sm font-medium text-heading">{name}</span>
@@ -37,23 +40,42 @@ export default function GameCard({ game, index = 0 }) {
     </>
   );
 
-  if (comingSoon) {
+  // Internal game page (e.g. Reel).
+  if (to) {
     return (
-      <motion.div {...motionProps} className={`${cardClassName} cursor-not-allowed opacity-70`}>
+      <MotionLink
+        to={to}
+        {...motionProps}
+        whileHover={{ y: -4 }}
+        whileTap={{ scale: 0.98 }}
+        className={`${cardClassName} hover:border-primary/40`}
+      >
         {content}
-      </motion.div>
+      </MotionLink>
     );
   }
 
+  // External game with a link provided — opens in a new tab.
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        {...motionProps}
+        whileHover={{ y: -4 }}
+        whileTap={{ scale: 0.98 }}
+        className={`${cardClassName} hover:border-primary/40`}
+      >
+        {content}
+      </motion.a>
+    );
+  }
+
+  // Coming soon, or link not yet provided.
   return (
-    <motion.a
-      href={href}
-      {...motionProps}
-      whileHover={{ y: -4 }}
-      whileTap={{ scale: 0.98 }}
-      className={`${cardClassName} hover:border-primary/40`}
-    >
+    <motion.div {...motionProps} className={`${cardClassName} cursor-not-allowed opacity-70`}>
       {content}
-    </motion.a>
+    </motion.div>
   );
 }

@@ -42,7 +42,7 @@ const FIELDS = [
 
 export default function Register() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ fullName: "", email: "", teamName: "" });
+  const [form, setForm] = useState({ fullName: "Prathamesh Kamble", email: "truepratham2801@gmail.com", teamName: "Cypher Works" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -59,7 +59,8 @@ export default function Register() {
       toast.success(
         `Welcome aboard, ${form.fullName.split(" ")[0] || "there"}!`,
       );
-      navigate("/home");
+      // Land on Home and let it surface the install prompt there.
+      navigate("/home", { state: { justRegistered: true } });
     }, 900);
   };
 

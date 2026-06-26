@@ -1,25 +1,40 @@
-import secretSpotsQuizLogo from "../../assets/games/Secret_Spots_Quiz_Logo.png";
-import logo from "../../assets/images/logo.png";
+import picturePerfectLogo from "../../assets/games/PICTURE_PERFECT.png";
+import royalChaseLogo from "../../assets/games/ROYAL_CHASE.png";
+import royalNinjaLogo from "../../assets/games/ROYAL_NINJA.png";
+import wordHuntLogo from "../../assets/games/WORD_HUNT.png";
+import reelLogo from "../../assets/games/REEL.png";
 
+// External games open in a new tab via `href` (URLs to be provided).
+// Reel is an internal page reached via `to`, and is always the last option.
 export const games = [
   {
-    id: "secret-spots-quiz",
-    name: "Secret Spots Quiz",
-    image: secretSpotsQuizLogo,
+    id: "picture-perfect",
+    name: "Picture Perfect",
+    image: picturePerfectLogo,
     href: "https://secret-spots-quiz-zeal-hsbc.vercel.app/",
   },
   {
-    id: "coming-soon-1",
-    name: "Coming Soon",
-    image: logo,
+    id: "royal-chase",
+    name: "Royal Chase",
+    image: royalChaseLogo,
     href: null,
-    comingSoon: true,
   },
   {
-    id: "coming-soon-2",
-    name: "Coming Soon",
-    image: logo,
+    id: "royal-ninja",
+    name: "Royal Ninja",
+    image: royalNinjaLogo,
     href: null,
-    comingSoon: true,
+  },
+  {
+    id: "word-hunt",
+    name: "Word Hunt",
+    image: wordHuntLogo,
+    href: null,
+  },
+  {
+    id: "reel",
+    name: "Reel",
+    image: reelLogo,
+    to: "/reel",
   },
 ];

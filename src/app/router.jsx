@@ -10,6 +10,7 @@ import { itineraryRoutes } from "../features/itinerary/routes";
 import { settingsRoutes } from "../features/settings/routes";
 import { notificationsRoutes } from "../features/notifications/routes";
 import { profileRoutes } from "../features/profile/routes";
+import { helpdeskRoutes } from "../features/helpdesk/routes";
 
 const router = createHashRouter([
   {
@@ -29,6 +30,7 @@ const router = createHashRouter([
           ...settingsRoutes,
           ...notificationsRoutes,
           ...profileRoutes,
+          ...helpdeskRoutes,
         ],
       },
     ],
