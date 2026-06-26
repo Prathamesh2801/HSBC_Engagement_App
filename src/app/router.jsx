@@ -11,6 +11,8 @@ import { settingsRoutes } from "../features/settings/routes";
 import { notificationsRoutes } from "../features/notifications/routes";
 import { profileRoutes } from "../features/profile/routes";
 import { helpdeskRoutes } from "../features/helpdesk/routes";
+import { travelAdvisoryRoutes } from "../features/travel-advisory/routes";
+import { dosAndDontsRoutes } from "../features/dos-and-donts/routes";
 
 const router = createHashRouter([
   {
@@ -31,6 +33,8 @@ const router = createHashRouter([
           ...notificationsRoutes,
           ...profileRoutes,
           ...helpdeskRoutes,
+          ...travelAdvisoryRoutes,
+          ...dosAndDontsRoutes,
         ],
       },
     ],

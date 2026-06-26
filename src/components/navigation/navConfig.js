@@ -1,4 +1,10 @@
-import { FiHome, FiAward, FiCalendar } from "react-icons/fi";
+import {
+  FiHome,
+  FiAward,
+  FiCalendar,
+  FiAlertTriangle,
+  FiCheckSquare,
+} from "react-icons/fi";
 import { TbDeviceGamepad2 } from "react-icons/tb";
 
 export const primaryNavItems = [
@@ -9,4 +15,6 @@ export const primaryNavItems = [
 export const moreNavItems = [
   { to: "/leaderboard", label: "Leaderboard", icon: FiAward },
   { to: "/itinerary", label: "Itinerary", icon: FiCalendar },
+  { to: "/travel-advisory", label: "Travel Advisory", icon: FiAlertTriangle },
+  { to: "/dos-and-donts", label: "Do's and Don'ts", icon: FiCheckSquare },
 ];
