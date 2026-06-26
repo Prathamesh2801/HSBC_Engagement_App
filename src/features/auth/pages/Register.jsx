@@ -42,7 +42,7 @@ const FIELDS = [
 
 export default function Register() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ fullName: "Prathamesh Kamble", email: "truepratham2801@gmail.com", teamName: "Cypher Works" });
+  const [form, setForm] = useState({ fullName: "", email: "", teamName: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
